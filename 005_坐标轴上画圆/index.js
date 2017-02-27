@@ -1,7 +1,9 @@
 var dataset = [ 
-	[34,2500], 
-	[2100, 1700], 
-	[1300, 900] 
+	[5,50], 
+	[25, 20], 
+	[40,100], 
+	[60,70], 
+	[70,140] 
 ];  
 
 var width = 400;  //画布的宽度
@@ -35,13 +37,30 @@ var axisY = d3.axisLeft()
     .scale(yScale)      //指定比例尺
 	.ticks(6); 
 
-
+//画x轴
 svg.append('g')
 	.attr('transform','translate('+padding+','+ (height-padding)+')')
 	.call(axisX);
 
+//画y轴
 svg.append('g')
 	.attr('transform','translate('+padding+','+padding+')')
 	.call(axisY);
+
+//画圆
+svg.append('g')
+	.selectAll('circle')
+	.data(dataset)
+	.enter()
+	.append('circle')
+	.attr('cx',function(d,i){
+		return xScale(d[0]) + padding;	
+	})
+	.attr('cy',function(d,i){
+		return yScale(d[1]) + padding;		
+	})
+	.attr('r',4)
+	.attr('fill','red');
+
 
 
