@@ -4,11 +4,11 @@
 		{
 			"type": "Feature",
 			"properties": {
-				
+				"name": "深圳"	
 			},
 			"geometry": {
 				"type": "Point",
-				"coordinates": [134.489,35.3437]
+				"coordinates": [114,22.5]
 			},
 			"id": "mb80095989"
 		}

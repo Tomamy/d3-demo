@@ -4,15 +4,61 @@
     <meta charset="UTF-8">
     <title>比例尺</title>
 	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
 		.map_path {
 			stroke: black;
 			stroke-width: 1;
 		}
 		.grid_path{
-			stroke: gray;
+			stroke: #dbdbdb;
 			stroke-width: 1;
 			fill:none;
 			opacity: 1;
+		}
+		#defs-wrap {
+			height: 0;
+			width:0;
+		}
+
+		.frame {
+			fill: none;
+			pointer-events: all;
+		}
+
+		.feature {
+			fill: #6CCC00;
+			stroke: #fff;
+			stroke-width: .5px;
+		}
+		.feature:hover {
+			cursor: pointer;
+			fill: yellow;
+		}
+
+		.globe {
+			stroke: rgba(255, 255, 255, .5);
+			stroke-width: .25px;
+		}
+
+		.star {
+			fill: #fff;
+			stroke: rgba(255, 255, 255, .5);
+			stroke-width: .25px;
+		}
+		#d3-panel {
+			background-color: #444444;
+			background-image: -webkit-gradient(linear, left top, right bottom, from(#000), to(#333));
+			background-image: -webkit-linear-gradient(left top, #000, #333);
+			background-image: -moz-linear-gradient(left top, #000, #333);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			overflow: hidden;
 		}
 	</style>
 </head>
